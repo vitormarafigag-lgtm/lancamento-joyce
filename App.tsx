@@ -6,17 +6,20 @@ import {
   Sparkles, 
   Menu, 
   X,
-  Rocket
+  Rocket,
+  CalendarDays
 } from 'lucide-react';
 import { Dashboard } from './components/Dashboard';
 import { TaskList } from './components/TaskList';
 import { CRM } from './components/CRM';
 import { AIAssistant } from './components/AIAssistant';
+import { Schedule } from './components/Schedule';
 import { INITIAL_METRICS, INITIAL_PHASES, INITIAL_TASKS, MOCK_LEADS } from './constants';
 
 enum Tab {
   Dashboard = 'Dashboard',
   Tasks = 'Tarefas',
+  Schedule = 'Cronograma',
   CRM = 'CRM / Leads',
   AI = 'Criativo (AI)'
 }
@@ -76,6 +79,7 @@ export default function App() {
           <nav className="flex-1 space-y-1">
             <NavItem tab={Tab.Dashboard} icon={LayoutDashboard} />
             <NavItem tab={Tab.Tasks} icon={CheckSquare} />
+            <NavItem tab={Tab.Schedule} icon={CalendarDays} />
             <NavItem tab={Tab.CRM} icon={Users} />
             <div className="pt-6 mt-6 border-t border-slate-100">
               <p className="px-4 text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Ferramentas</p>
@@ -117,6 +121,7 @@ export default function App() {
           <div className="max-w-7xl mx-auto h-full">
             {activeTab === Tab.Dashboard && <Dashboard metrics={metrics} phases={phases} />}
             {activeTab === Tab.Tasks && <TaskList tasks={tasks} />}
+            {activeTab === Tab.Schedule && <Schedule />}
             {activeTab === Tab.CRM && <CRM leads={leads} />}
             {activeTab === Tab.AI && <AIAssistant apiKey={process.env.API_KEY} />}
           </div>

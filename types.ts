@@ -44,3 +44,13 @@ export interface Lead {
   notes: string;
   interestLevel: number; // 1-5
 }
+
+export type EventType = 'Content' | 'Strategy' | 'Group';
+
+export interface ScheduleEvent {
+  id: string;
+  date: Date;
+  title: string;
+  type: EventType;
+  time?: string;
+}
