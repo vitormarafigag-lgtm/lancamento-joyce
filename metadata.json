@@ -1,0 +1,5 @@
+{
+  "name": "LaunchCommand",
+  "description": "A comprehensive dashboard to manage the product launch phases, track KPIs, manage tasks, and generate copy using AI.",
+  "requestFramePermissions": []
+}
