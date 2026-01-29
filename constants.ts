@@ -102,7 +102,7 @@ export const INITIAL_METRICS: Metric[] = [
   },
   {
     label: 'Confirmados (Evento)',
-    current: 0,
+    current: 15,
     target: 60,
     unit: 'pessoas',
     icon: 'CheckCircle',
